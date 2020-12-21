@@ -54,7 +54,13 @@ border: none;
 .form-group{
   
 }
-.credit-card-form{
+
+.card-form-main{
+  max-width: 890px;
+
+}
+
+.card-form{
   margin: 30px auto;
   max-width: 90%;
 }

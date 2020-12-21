@@ -25,16 +25,17 @@
     <%= form_with(model: @purchase, url: item_orders_path, id: 'charge-form', class: 'transaction-form-wrap', local: true) do |f| %>  
 
     <div class='item-payment'>   
-
-     クレジットカード情報入力
+      <h1 class = "index-title">
+       クレジットカード情報入力
+      </h1>
+      
     <!-- 支払額の表示 -->
       <h1 class='item-payment-title'>
         支払金額
       </h1>
-      <p class='item-payment-price'>
-        ¥<%= @item.price %>
-      </p>
-    </div>
+          <div class = "item-price">
+            <%= @item.price %>円<p class = "mini-font">（税込）</p>
+          </div>
     <!-- -->
 
     <!-- カード情報の入力 -->
