@@ -1,0 +1,115 @@
+  <div class = "show-main">
+    <!-- パンクズリスト -->
+    <% breadcrumb :stores_show %>
+
+      <div class = "show-left" >
+
+          <!-- 店舗登録者の場合、編集ボタンと削除ボタン表示 -->
+          <% if user_signed_in? && current_user.id == @store.user_id %>
+            <div class = "store-edit">
+              <%= link_to "編集する", edit_store_path(@store), class: "store-edit-btn" %>
+              <%= link_to "削除する", store_path(@store), method: :delete, class: "store-edit-btn" %>
+            </div>
+          <% end %>
+
+          <div class = "store-city-font">
+            <%= @store.prefecture.name %>
+            <%= @store.city %><%= @store.address %>
+          </div>
+
+          <div class = "show-store-name">
+            <%= @store.store_name %>
+          </div>
+            
+          <div class = "store-day-font">
+            営業時間  <%= @store.open_time.strftime('%H:%M') %>
+            〜<%= @store.close_time.strftime('%H:%M') %>
+          </div>
+            
+          <div class = "store-day-font">
+             定休日  <%= @store.close_day %>
+          </div>
+            
+          <div class = "show-store-font">
+            TEL  <%= @store.phone_number %>
+          </div>
+
+          <% if @store.images.attached? %>
+            <%= image_tag @store.images[0], class: "potato-img" %>
+          <% end %>
+
+          <div class = "show-potato-500">
+            <p class = "show-potato-font">MY POTATO 500</p>
+              <div class = "show-potato-box">
+                <%= simple_format @store.content_500 %>
+
+                <!-- いいねポテトボタン -->
+                <div class = "favorite-box">
+                  <% if user_signed_in? %>
+                    <% if current_user.already_favorited?(@store) %>
+                      <%= link_to image_tag("ine2.png"), store_favorite_path(@store), method: :delete %>
+                    <% else %>
+                      <%= link_to image_tag("ine1.png"), store_favorites_path(@store), method: :post %>
+                    <% end %>
+
+                    <!-- いいねポテトカウンター -->
+                    <div class = "favorite-count"><%= @store.favorites.count%></div>
+
+                  <% else %>
+                      <%= image_tag "ine1.png" %><%= @store.favorites.count %>
+                  <% end %>
+               
+                </div>
+
+              </div>
+          </div>
+
+          <div class = "show-introduction">
+            <div class = "show-introduction-font">
+              お店からのお知らせ
+            </div>
+            <div class = "introduction-box">
+              <%= simple_format @store.introduction %>
+                <div class = "introduction-day">
+                  <strong><%= l @store.created_at, format: :short %>
+                </div>
+            </div>
+          </div>
+            
+          <div class = "show-img-box">
+            <% if @store.images.attached? %>
+              <% @store.images.each do |image| %>
+              <%= image_tag image, class: "show-img" %>
+              <% end %>
+            <% end %>
+          </div>
+      </div>
+
+      <!-- コメント投稿フォーム -->
+      <div class = "show-right">
+      <img src = "/assets/comment.png" class = "comment-img">
+        <% if user_signed_in? %>
+          <%= form_with(model: [@store, @comment], local: true) do |f| %>
+            <%= f.text_area :comment, placeholder: "３０文字以内＆ニックネーム表示", rows: "2", class: "comment-form"%>
+            <%= f.submit "▼", class: "comment-btn"%>
+          <% end %>
+        <% else %>
+          <strong>※コメントの投稿には<br>新規登録/ログインが必要です※</strong>
+        <% end %>
+
+        <% if @comments %>
+          <% @comments.each do |comment| %>
+            <div class = "comment-main">
+              <div class = "comment">
+                <%= comment.comment %>
+              </div>
+                    
+              <div class = "comment-name">
+                <strong><%= l comment.created_at, format: :short %>
+                <%= comment.user.nickname %></strong>
+              </div>
+            </div>
+          <% end %>
+        <% end %> 
+      </div>
+</div>

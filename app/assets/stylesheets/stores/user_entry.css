@@ -1,0 +1,19 @@
+.user-entry-outer{
+  padding: 20px;
+  
+}
+
+.user-entry-inner{
+  margin: auto;
+  text-align: center;
+  font-size: 2vh;
+}
+
+.field{
+  margin: 20px;
+}
+
+.actions{
+  margin: 10px;
+  padding: 2px 20px;
+}

@@ -1,0 +1,68 @@
+.item-main{
+  max-width: 890px;
+  margin: auto;
+  text-align: center;
+}
+
+.item-box{
+  width: 50%;
+  border: solid 3px red;
+  margin: 2rem auto;
+  padding-bottom: 1rem;
+}
+
+.item-name{
+  background-color: red;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.item-img{
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+.item-introduction{
+  background-color: red;
+  color: white;
+  font-size: 1.5rem;
+}
+.item-price{
+  font-size: 2rem;
+  margin: 1rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.item-btn{
+background-color: red;
+color: white;
+border-radius: 10px;
+padding: 10px 20px;
+border: none;
+}
+
+.mini-font{
+  font-size: small;
+}
+
+/* order_inndex のCSS */
+.order-box{
+  text-align: center;
+}
+.form-group{
+  
+}
+.credit-card-form{
+  margin: 30px auto;
+  max-width: 90%;
+}
+
+.input-expiration-date{
+  width: 50px;
+  height: 30px;
+}
+.card-logo{
+  width: 50px;
+}

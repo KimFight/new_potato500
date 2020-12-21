@@ -1,0 +1,76 @@
+<div class = "index-outer">
+<% breadcrumb :root %>
+   <div class = "store-main">
+
+        <div class = "about-top-text">
+           <img src = "/assets/top.png" class = "sample-img" alt = "" ><br>
+            掲載したことで売上が伸び「POTATO500」の運営を応援するぞという方は<br>
+            右上のポテトアイコンをクリック後、「POTATO500グッズ購入」をぜひぜひご覧ください！<br>
+        </div>
+
+        <div class = "about-box" >
+            <div class = "about-text">
+            <div class = "about-title">①まずは新規登録へ</div>
+            店舗情報掲載希望のお客様、またはコメントでお店を応援したいお客様は
+            右上の「新規登録」から、新規登録をしてください。<br>
+            ニックネーム、メールアドレス、パスワードで簡単登録。
+            </div>
+              <img src = "/assets/about4.png" class = "about-img" alt = "" >
+        </div>
+    
+        <div class = "about-box" >
+            <img src = "/assets/about1.png" class = "about-img" alt = "" >
+          <div class = "about-text">
+              <div class = "about-title">②掲載希望のお客様はお店登録へ</div>
+              店舗情報掲載希望のお客様はログイン後、右上の「お店登録」にて情報登録をしてください。<br><br>
+              「ポテト＋何かのセットが税込５００円」というテイクアウトメニューを作っていただくのが
+              POTATO500の掲載条件です。<br>
+          </div>
+        </div>
+      
+        <div class = "about-box" >
+          <div class = "about-text">
+              <div class = "about-title">③店舗情報登録完了で掲載開始</div>
+              テイクアウトご利用のお客様は、掲載している店舗電話番号へ直接ご注文し、
+              出来上がりのお時間を確認のお店へ。
+          </div>
+              <img src = "/assets/about5.png" class = "about-img" alt = "" >
+        </div>
+
+        <div class = "about-text">
+             ※当サイトは情報掲載のみです。当サイトから会計やテイクアウトのご予約はできません。<br>
+        </div>
+
+
+<div class = "index-title">全国のお店ランダムチョイス</div>
+      <% @stores.each do |store| %>
+          
+          <div class = "store-box">
+
+            <div class = "left-box">
+                <div class = "store-name-box">
+                  <p class = "store-prefecture"><%= store.prefecture.name %> <%= store.city %></p>
+                  <p class = "store-name"><%= store.store_name %></p>
+                </div>
+
+                <div class = "potato-500-box">
+                  <p class = "potato-font">POTATO 500</p>
+                  <%= store.content_500 %>
+                </div>
+
+                <div class = "store-introduction">
+                  <marquee><%= store.introduction %></marquee>
+                </div>
+
+            </div>
+            
+            <div class = "right-box">
+                <% if store.images.attached? %>
+                   <%= link_to image_tag(store.images[0], class: "store-img"), store_path(store.id) %>
+                <% end %>
+            </div>
+
+          </div>
+      <% end %> 
+    </div>
+</div>

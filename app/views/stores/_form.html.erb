@@ -1,0 +1,60 @@
+<div class = "entry-main">
+   <%= form_with model: @store, local: true do |f| %>
+
+        <%= render 'layouts/error_messages', model: f.object %>
+
+      <div class = "entry-font">店舗画像<br>
+          <%= f.file_field :images, name: 'store[images][]', id: 'store-images' %>
+          <div id="image-list"></div>
+         
+          <% @store.images.each do |image| %>
+          <%= image_tag image, class: 'images' %>
+          <% end %>
+      </div>
+
+      <div class = "entry-font">店舗名
+          <%= f.text_field :store_name, placeholder: "店舗名"%>
+      </div>
+
+      <div class = "entry-font">郵便番号（ハイフンあり） 
+          <%= f.text_field :postal_code, class:"entry-form", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
+      </div>
+
+      <div class = "entry-font">都道府県
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+      </div>
+
+      <div class = "entry-font">市町村
+          <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）○○市○○町"%>
+      </div>
+      
+      <div class = "entry-font">番地
+          <%= f.text_field :address, class:"input-default", id:"address", placeholder:"例）000番地1"%>
+      </div>
+
+      <div class = "entry-font">建物名
+          <%= f.text_field :building_name, class:"input-default", id:"building_name", placeholder:"空欄でも可"%>
+      </div>
+
+      <div class = "entry-font">電話番号
+          <%= f.text_field :phone_number, class:"entry-form", id:"phone-number", placeholder:"ハイフンなしの半角数字",maxlength:"11"%>
+      </div>
+
+      <div class = "entry-font">定休日
+          <%= f.text_field :close_day , class:"input-default", id:"close-day", placeholder:"例）月曜日"%>
+     </div>
+
+      <div class = "entry-font">営業時間
+          <%= f.time_select :open_time, include_blank: true, start_hour: 8, end_hour: 24, minute_step: 15 %>
+          〜<%= f.time_select :close_time, include_blank: true, start_hour: 8, end_hour: 24, minute_step: 15 %>
+      </div>
+
+      <div class = "entry-font">ポテト５００の内容（shiftキーとEnterキーで改行）</div> 
+          <%= f.text_area :content_500, class:"entry-text", id:"content_500", placeholder:"例）ポテトと○○のセットです！"%>
+
+      <div class = "entry-font">お店紹介（shiftキーとEnterキーで改行）</div> 
+          <%= f.text_area :introduction, class:"entry-text", id:"introduction", placeholder:"例）○○○が○○○円でテイクアウトできます！今月○日は臨時休業です。"%>
+          <div class = "submit-btn" ><%= f.submit "以上で登録する" %></div>
+    
+    <% end %>
+</div>

@@ -1,0 +1,43 @@
+.entry-outer{
+  padding: 20px;
+}
+
+.entry-main{
+  margin: 20px auto;
+  max-width: 700px;
+  font-size: 2vh;
+}
+
+.entry-title-font{
+  border-bottom: red 3px solid;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 3vh;
+}
+
+.image-element{
+width: 200px;
+}
+
+.entry-font{
+  margin: 20px 20px 0 20px;
+}
+
+.entry-form{
+  width: 40%;
+}
+
+.entry-text{
+  width: 100%;
+  height: 100px;
+}
+
+.submit-btn{
+text-align: right;
+}
+
+.images{
+  width: 200px;
+}

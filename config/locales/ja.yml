@@ -1,0 +1,22 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%m/%d %H:%M"
+
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+     store:
+       prefecture_id: 都道府県
+       images: 画像
+       postal_code: 郵便番号
+       city: 市町村
+       store_name: 店舗名
+       phone_number: 電話番号
+       address: 番地
+       close_day: 定休日
+       content_500: ポテト５００の内容
+       introduction: お店の紹介
