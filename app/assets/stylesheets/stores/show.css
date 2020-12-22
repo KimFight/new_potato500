@@ -29,6 +29,8 @@ width: 100%;
 }
 
 .comment-img{
+  max-width: 200px;
+  margin: 0.5rem;
 }
 
 .favorite-box{

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'stores#index'
 
   resources :stores do
-    resources :comments, only: :create 
+    resources :comments, only: [:create, :destroy] 
     resources :favorites, only: [:create, :destroy]
     collection do
       get 'search'
