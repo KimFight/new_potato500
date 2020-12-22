@@ -1,40 +1,38 @@
 <% breadcrumb :stores_search %>
 <div class = "index-outer">
-    <div class = "store-main">
-          
-          <% if @results.length !=0 %>
+  <div class = "store-main">
+
+    <!-- 該当店舗があれば -->
+    <% if @results.length !=0 %>
               
-              <% @results.each do |store| %>
-                 <div class = "store-box">
-
-            <div class = "left-box">
-                <div class = "store-name-box">
-                  <p class = "store-prefecture"><%= store.prefecture.name %> <%= store.city %></p>
-                  <p class = "store-name"><%= store.store_name %></p>
-                </div>
-
-                <div class = "potato-500-box">
-                  <p class = "potato-font">POTATO 500</p>
-                  <%= store.content_500 %>
-                </div>
-
-                <div class = "store-introduction">
-                  <marquee><%= store.introduction %></marquee>
-                </div>
-
-            </div>
-            
-            <div class = "right-box">
-                <% if store.images.attached? %>
-                   <%= link_to image_tag(store.images[0], class: "store-img"), store_path(store.id) %>
-                <% end %>
+      <% @results.each do |store| %>
+        <div class = "store-box">
+          <div class = "left-box">
+            <div class = "store-name-box">
+              <p class = "store-prefecture"><%= store.prefecture.name %> <%= store.city %></p>
+              <p class = "store-name"><%= store.store_name %></p>
             </div>
 
+            <div class = "potato-500-box">
+              <p class = "potato-font">POTATO 500</p>
+              <%= store.content_500 %>
+            </div>
+
+            <div class = "store-introduction">
+              <marquee><%= store.introduction %></marquee>
+            </div>
           </div>
-            <%end%>
+            
+          <div class = "right-box">
+            <% if store.images.attached? %>
+              <%= link_to image_tag(store.images[0], class: "store-img"), store_path(store.id) %>
+            <% end %>
+          </div>
+        </div>
+      <%end%>
        
-          <% else %>
-              該当する店舗はありません。
-          <% end %> 
-     </div>
+      <% else %>
+        該当する店舗はありません
+    <% end %> 
+  </div>
 </div>

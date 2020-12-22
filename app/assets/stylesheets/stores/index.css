@@ -1,6 +1,5 @@
-.index_outer{
+.index-outer{
   text-align: center;
-  padding: 20px;
 }
 
 .store-main{
@@ -9,7 +8,7 @@
 }
 
 .welcome{
-  margin: 10px;
+  margin: 0 1rem;
   padding: 8px;
   font-size: 1.2rem;
   text-align: center;

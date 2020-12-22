@@ -2,7 +2,7 @@
 
   <!-- 運営よう新規登録ボタン-->
   <div class = "item-new">
-    <% if current_user.id == 1 %>    
+    <% if current_user.id == 1 %>
       <%= link_to "グッズを新規登録する", new_item_path, method: :get %>
     <% end %>
   </div>

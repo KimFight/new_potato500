@@ -1,0 +1,28 @@
+<%= form_with model: @item, local: true do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+
+      <div class="new-item-box">
+        <!-- item_imageの添付 -->
+        <%= f.file_field :item_image, id:"item-image" %>
+       
+        <!-- 商品名と商品説明 -->
+        <div class="new-item-text">
+          商品名
+          <%= f.text_area :name, class:"new-item-name", id:"new-item-name", placeholder:"商品名"%>
+        </div>
+        <div class="new-item-text">
+          商品説明
+          <%= f.text_area :introduction, class:"new-item-info", id:"new-item-info", placeholder:"商品説明"%>
+        </div>
+
+        <!-- 価格 -->
+        <div class="new-item-text">
+          <span>販売価格</span>
+          <%= f.text_field :price, class:"new-item-price", id:"item-price", placeholder:"税込" %>
+        </div>
+
+        <div class="sell-btn-contents">
+          <%= f.submit "商品登録" ,class:"new-item-btn" %>
+        </div>
+    </div>
+  <% end %>

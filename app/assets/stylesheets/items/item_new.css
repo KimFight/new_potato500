@@ -1,0 +1,44 @@
+.new-item-outer{
+  max-width: 300px;
+  text-align: center;
+  margin: auto;
+  height: 70vh;
+}
+
+.new-item-box{
+  margin: 2rem auto;
+}
+
+.new-item-title{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: solid 2px;
+}
+
+.new-item-name{
+  height: 25px;
+  width: 200px;
+  margin-left: 2rem;
+}
+
+.new-item-text{
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.new-item-price{
+  height: 25px;
+  width: 200px;
+  margin-left: 1rem;
+}
+
+.new-item-info{
+  width: 200px;
+  height: 75px;
+  margin-left: 1rem;
+}
+
+.new-item-btn{
+padding: 2px 10px;
+}
