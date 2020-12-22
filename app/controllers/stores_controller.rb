@@ -2,8 +2,6 @@ class StoresController < ApplicationController
   #before_action :set_###, only: [:###] 最後にまとめます
   before_action :authenticate_user!, except: [:index, :show, :search]
  
-
-
       def index
         @stores = Store.order("RAND()").limit(3)
       end

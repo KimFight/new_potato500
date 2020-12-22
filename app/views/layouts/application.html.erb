@@ -22,7 +22,7 @@
             <div class = "potato-box">
                 <ul class = "show-lists hidden" id="pull-down" >
                   <a href="#"><li class="pull-down-list">POTATO500よくある質問</li></a>
-                  <a href="items"><li class="pull-down-list">POTATO500グッズ購入</li></a>
+                   <li class="pull-down-list"><%= link_to "POTATO500グッズ購入", items_path%></li>
                 </ul>
                 <%= image_tag "logo.png", class: :logo, id: "logo" %>
             </div>
@@ -42,6 +42,7 @@
             <div class = "session-box">
               <% if user_signed_in? %>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "user-bnt" %>
+                <%= link_to "ログイン情報変更", edit_user_registration_path, method: :get,class: "user-bnt" %>
                 <%= link_to "お店登録", new_store_path, class: "user-bnt" %>
                 <!--<p class = "user-bnt"><%= link_to "管理人応援ページ", "#", class: "user-bnt" %></p>-->
               <% else %>

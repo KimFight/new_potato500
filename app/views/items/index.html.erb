@@ -1,19 +1,30 @@
 <div class = "item-main">
-<div class = "index-title">運営応援グッズ購入ページ</div>
 
-  <% @items.each do |item| %>
+  <!-- 運営よう新規登録ボタン-->
+  <div class = "item-new">
+    <% if current_user.id == 1 %>    
+      <%= link_to "グッズを新規登録する", new_item_path, method: :get %>
+    <% end %>
+  </div>
+   <!-- -->
+
+
+  <div class = "">運営応援グッズ購入ページ</div>
+    <div class = "item-font">買ってくれると運営のご飯のおかずが一品増えます。</div>
+  
+   <!-- グッズ表示 -->
+   <% @items.each do |item| %>
      <div class = "item-box">
 
           <div class = "item-name">
             <%= item.name %>
           </div>   
           <div class = "item-img">
-            <img src = "/assets/items/sample.JPG" alt = "" class = "item-img">
-            <!-- imegeファイルに自分で保存 -->
+            <%= image_tag item.item_image, class:"item-img"%>
           </div>
 
           <div class = "item-introduction">
-            <%= item.introduction %>
+            <%= simple_format item.introduction %>
           </div>
 
           <div class = "item-price">
@@ -22,6 +33,16 @@
           <% if user_signed_in? %>
             <%= link_to '購入画面に進む', item_orders_path(item.id),class:"item-btn"%>
           <% end %>
-    </div>
-  <% end %>
+          
+          <div class = "item-font">
+          <% if current_user.id == 1 %>
+            この商品を
+            <%= link_to "編集する", edit_item_path(item.id), class: "", method: :get%>
+            <%= link_to "削除する", item_path(item.id), method: :delete, class: "" %>
+            </div>
+          <% end %>    
+      </div>
+   <% end %>
+  <!-- -->
+
 </div>

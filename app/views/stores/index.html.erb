@@ -2,8 +2,17 @@
 <% breadcrumb :root %>
    <div class = "store-main">
 
+   <% if user_signed_in? %>
+      <div class = "welcome">
+       いらっしゃいませ！<%= current_user.nickname %>様！
+       <%= current_user.nickname %>様のお店情報は
+       <%= link_to "コチラから", store_path(current_user.id), class: "welcome-btn" %>
+      
+      </div>
+    <% end %>
+
         <div class = "about-top-text">
-           <img src = "/assets/top.png" class = "sample-img" alt = "" ><br>
+          <img src = "/assets/top.png" class = "sample-img" alt = "" ><br>
             掲載したことで売上が伸び「POTATO500」の運営を応援するぞという方は<br>
             右上のポテトアイコンをクリック後、「POTATO500グッズ購入」をぜひぜひご覧ください！<br>
         </div>
@@ -36,11 +45,6 @@
           </div>
               <img src = "/assets/about5.png" class = "about-img" alt = "" >
         </div>
-
-        <div class = "about-text">
-             ※当サイトは情報掲載のみです。当サイトから会計やテイクアウトのご予約はできません。<br>
-        </div>
-
 
 <div class = "index-title">全国のお店ランダムチョイス</div>
       <% @stores.each do |store| %>

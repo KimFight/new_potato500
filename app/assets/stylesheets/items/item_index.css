@@ -4,11 +4,19 @@
   text-align: center;
 }
 
+.item-new{
+text-align: left;
+margin-left: 2rem;
+}
+
 .item-box{
-  width: 50%;
-  border: solid 3px red;
+  width: 60%;
+  border: solid 5px red;
   margin: 2rem auto;
-  padding-bottom: 1rem;
+}
+
+.item-font{
+  margin: 20px;
 }
 
 .item-name{
@@ -23,10 +31,9 @@
 }
 
 .item-introduction{
-  background-color: red;
-  color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
+
 .item-price{
   font-size: 2rem;
   margin: 1rem;
@@ -47,17 +54,46 @@ border: none;
   font-size: small;
 }
 
-/* order_inndex のCSS */
-.order-box{
-  text-align: center;
+/* order_index のCSS */
+
+.buy-box{
+  max-width: 90%;
+  border: solid 5px red;
+  margin: 2rem auto;
+  display: flex;
+  padding: 1rem;
 }
+
+.buy-box-left{
+  max-width: 400px;
+  margin: auto;
+  background-color: orange;
+}
+
+.buy-box-right{
+  width: 100%;
+}
+
+.order-form{
+  text-align: left;
+  margin: 1rem;
+}
+
+.order-price{
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+.order-img{
+  max-width: 370px;
+}
+
 .form-group{
-  
+  margin: 10px;  
 }
 
 .card-form-main{
   max-width: 890px;
-
 }
 
 .card-form{
@@ -65,10 +101,18 @@ border: none;
   max-width: 90%;
 }
 
+/*カード情報の月日のフォーム*/
 .input-expiration-date{
   width: 50px;
   height: 30px;
 }
+
 .card-logo{
-  width: 50px;
+  max-height: 30px;
+  margin-top: 10px;
+}
+
+/*必須という文字*/
+.indispensable{
+  color:red;
 }

@@ -1,11 +1,8 @@
-<div>商品登録</div>
- <%= form_with model: @item, local: true do |f| %>
-
-<%= render 'layouts/error_messages', model: f.object %>
+<div>商品編集</div>
+   <%= form_with model: @item, local: true do |f| %>
 
     <!-- 商品名と商品説明 -->
     <div class="new-items">
-      
       <div class="weight-bold-text">
         商品名
       </div>
@@ -13,31 +10,30 @@
       <div class="items-explain">
         <div class="weight-bold-text">
           商品の説明
-        </div>
+          </div>
         <%= f.text_area :introduction, class:"items-text", id:"item-info", placeholder:"商品の説明"%>
       </div>
-   
     </div>
-    <!-- -->
+     <!-- -->
     
     <!-- item_imageの添付 -->
      <%= f.file_field :item_image, id:"item-image" %>
     <!--  -->
-    
+
     <!-- 価格 -->
     <div class="sell-price">
-      <div class="price-content">
-        <div class="price-text">
-          <span>価格</span>
+        <div class="price-content">
+          <div class="price-text">
+            <span>価格</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"価格" %>
         </div>
-        <span class="sell-yen">¥</span>
-        <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"価格" %>
-      </div>
     </div>
     <!-- -->
 
-      <div class="sell-btn-contents">
-        <%= f.submit "商品登録" ,class:"sell-btn" %>
+    <div class="sell-btn-contents">
+      <%= f.submit "商品登録" ,class:"sell-btn" %>
       </div>
     </div>
-  <% end %>
+    <% end %>

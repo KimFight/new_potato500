@@ -8,6 +8,21 @@
   margin: 20px auto;
 }
 
+.welcome{
+  margin: 10px;
+  padding: 8px;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: orange;
+  color: white;
+}
+
+.welcome-btn{
+  background-color: white;
+  border: solid 3px red;
+  padding: 3px;
+}
+
 .about-top-text{
   text-align: center;
   margin: 20px;
