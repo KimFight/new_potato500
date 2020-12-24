@@ -1,7 +1,5 @@
 <div class = "item-main">
-
   <div class = "buy-box">
-
     <div class = "buy-box-left">
 
       <h1 class = "order-title">グッズ購入のお手続き</h1>
@@ -10,15 +8,15 @@
       
       <p><%= @item.name %></p>
       <p><%= simple_format @item.introduction %></p>
-    <!-- 支払額の表示 -->
+      <!-- 支払額の表示 -->
       <div class = "order-price"> 
         支払金額　税込<%= @item.price %>円
       </div>
-    <!-- -->
-
+      <!-- -->
     </div>
      
-    <%= form_with(model: @purchase, url: item_orders_path, id: 'charge-form', class: 'transaction-form-wrap', local: true) do |f| %>  
+    <%= form_with(model: @order_purchase, url: item_orders_path, id: 'charge-form', class: 'transaction-form-wrap', local: true) do |f| %>  
+    <%= render 'layouts/error_messages', model: @order_purchase %>
     <div class='buy-box-right'>
 
     <!-- カード情報の入力 -->

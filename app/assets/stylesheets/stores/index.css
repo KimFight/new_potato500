@@ -17,9 +17,11 @@
 }
 
 .welcome-btn{
-  background-color: white;
-  border: solid 3px red;
-  padding: 3px;
+  background-color: red;
+  border: solid 2px white;
+  padding: 0.2rem 1rem;
+  color: white;
+  text-decoration: none;
 }
 
 .about-top-text{
@@ -85,7 +87,7 @@
 }
 
 .store-name{
-  font-size: 3rem;
+  font-size: 2rem;
   margin-left: 20px;
 }
 

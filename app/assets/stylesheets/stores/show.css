@@ -125,14 +125,25 @@ font-size: 0.8rem;
   width: 280px;
 }
 
+.comment-btn-form{
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-size: 1rem;
+}
+
+.image-file{
+  background-color: gray;
+  border: solid 1px white;
+  padding: 0.5rem;
+  width: 60px;
+}
+
 .comment-btn{
-  width: 280px;
-  height: 18px;
+  padding: 0.5rem;
   background:red;
   border: solid 1px white;
-  color: white;
-  margin: 5px;
-  font-size: 0.5rem;
+  width: 100px;
 }
 
 .comment-main{

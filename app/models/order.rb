@@ -1,4 +1,9 @@
 class Order < ApplicationRecord
+
+  belongs_to :purchase
+
+  
+# 都道府県の情報を「JpPrefecture」というgemを利用して表示してみた
   include JpPrefecture
   jp_prefecture :prefecture_code
 

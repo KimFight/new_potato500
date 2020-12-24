@@ -85,17 +85,26 @@
 
   <!-- コメント投稿フォーム -->
   <div class = "show-right">
-      <img src = "/assets/comment.png" class = "comment-img">
-        <% if user_signed_in? %>
-          <%= form_with(model: [@store, @comment], local: true) do |f| %>
-            <%= f.text_area :comment, placeholder: "３０文字以内＆ニックネーム表示", rows: "2", class: "comment-form"%>
-            <!-- item_imageの添付 -->
-            <%= f.file_field :comment_image, id:"comment-image" %>
-            <%= f.submit "▼", class: "comment-btn"%>
-          <% end %>
-        <% else %>
-          <strong>※コメントの投稿には<br>新規登録/ログインが必要です※</strong>
-        <% end %>
+  <img src = "/assets/comment.png" class = "sample-img" alt = "" >
+    <% if user_signed_in? %>
+      <%= form_with(model: [@store, @comment], local: true) do |f| %>
+        <%= f.text_area :comment, placeholder: "３０文字以内＆ニックネーム表示", rows: "2", class: "comment-form"%>
+        
+          <!-- item_imageの添付 -->
+          <div class = "comment-btn-form">
+            <!-- デフォルトのボタンを隠し、装飾する。labelでその範囲内にfil_field適用 -->
+            <label class="form-image">
+            <div class="image-file">画像</div>
+            <%= f.file_field :comment_image, class: 'hidden' %>
+            </label>
+            <!-- -->
+            <%= f.submit "▼投稿する", class: "comment-btn"%>
+          </div>
+      <% end %>
+    
+    <% else %>
+      <strong>※コメントの投稿には<br>新規登録/ログインが必要です※</strong>
+    <% end %>
 
         <% if @comments %>
           
@@ -114,7 +123,7 @@
                 <strong><%= l comment.created_at, format: :short %>
                 <%= comment.user.nickname %></strong>
               <% if user_signed_in? && current_user.id == @store.user_id %>
-                <%= link_to "削除する", store_comment_path(comment.id), method: :delete, class: "" %>
+                <%= link_to "削除する", store_comment_path(comment.store.id, comment.id), method: :delete, class: "" %>
               <% end %>
               </div>
             </div>

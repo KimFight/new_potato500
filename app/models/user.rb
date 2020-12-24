@@ -4,17 +4,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
+  validates :nickname, presence: true
 
   has_one  :store
   has_many :comments
+  has_many :purchases
 
-  has_many :favorites, dependent: :destroy
+
   # いいね機能
+  has_many :favorites, dependent: :destroy
 
   def already_favorited?(store)
     self.favorites.exists?(store_id: store.id)
   end
-
-  validates :nickname, presence: true
 
 end
