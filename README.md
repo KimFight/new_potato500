@@ -125,8 +125,7 @@
 | name         | string      | null: false                     |
 | introduction | string      | null: false                     |
 | price        | integer     | null: false , foreign_key: true |
-| price        | integer     | null: false , foreign_key: true |
-| purchases    | references  | null: false , foreign_key: true |
+
 
 ## Association
 - has_one : purchase
@@ -136,7 +135,7 @@
 
 | Colum        | Type        | Options                         |
 | -------------|-------------|---------------------------------|
-| comment      | string      | null: false                     |
+| request      | text        | null: false                     |
 | store        | integer     | null: false , foreign_key: true |
 
 ## Association

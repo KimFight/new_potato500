@@ -15,4 +15,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :create, :show]
   end
 
+  # グッズ購入者から運営への要望
+  resources :request, only: :create
+
 end

@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
     Comment.create(comment_params)
+    
     #遷移元のURLを取得してリダイレクト
     redirect_to request.referer
   end

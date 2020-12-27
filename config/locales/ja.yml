@@ -20,3 +20,11 @@ ja:
        close_day: 定休日
        content_500: ポテト５００の内容
        introduction: お店の紹介
+     order:
+       name: 苗字名前
+       postal code: 郵便番号
+       city: 市区町村
+       phone number: 電話番号
+       token: カード情報
+
+

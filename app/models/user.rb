@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_one  :store
   has_many :comments
   has_many :purchases
+  has_one  :request
 
 
   # いいね機能
