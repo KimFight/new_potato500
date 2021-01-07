@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
 
       if  @order_purchase.valid?
           pay_item
+          binding.pry
           @order_purchase.save
           return redirect_to items_path
       else
