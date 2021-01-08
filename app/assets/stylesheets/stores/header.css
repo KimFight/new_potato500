@@ -55,7 +55,7 @@ margin: auto;
 
 .top-inner{
   padding: 20px;
-  background-image: url("/assets/potato.png");
+  background-image: url("/images/potato.png");
   background-repeat: repeat-x;
   margin-bottom: 20px;
 }
@@ -111,7 +111,7 @@ height: 100%;
 
 .potato_1{
   height: 100px;
-  background-image: url("/assets/potato_1.png");
+  background-image: url("/images/potato_1.png");
   background-repeat: repeat-x;
 }
 
