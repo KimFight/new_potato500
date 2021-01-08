@@ -1,6 +1,6 @@
 <div class = "item-main">
 
-  <!-- 運営よう新規登録ボタン-->
+  <!-- 運営用新規登録ボタン-->
   <div class = "item-new">
     <% if current_user.id == 1 %>
       <%= link_to "グッズを新規登録する", new_item_path, method: :get %>
@@ -9,8 +9,10 @@
    <!-- -->
 
   <div>運営応援グッズ購入ページ</div>
-    <div class = "item-font">買ってくれると運営のご飯のおかずが一品増えます。</div>
-   
+    <div class = "item-font">
+      買ってくれると運営のご飯のおかずが一品増えます。
+    </div>
+      
     <% @items.each do |item| %>
       <div class = "item-box">
         <!-- グッズ表示 -->

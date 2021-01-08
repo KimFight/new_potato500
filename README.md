@@ -134,12 +134,3 @@
 - has_one : purchase
 
 
-## requests テーブル
-
-| Colum        | Type        | Options                         |
-| -------------|-------------|---------------------------------|
-| request      | text        | null: false                     |
-| store        | integer     | null: false , foreign_key: true |
-
-## Association
-- belongs_to : store
