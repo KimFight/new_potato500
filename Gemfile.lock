@@ -300,7 +300,7 @@ DEPENDENCIES
   jp_prefecture
   listen (>= 3.0.5, < 3.2)
   mini_magick
-  mysql2 (>= 0.5.3)
+  mysql2 (>= 0.4.4)
   payjp
   pry-rails
   puma (~> 3.11)
